@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta http-equiv="refresh" content="3"> -->
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+
+    <title>MaxChat</title>
+</head>
+<body>
+    <header class="header">
+        <img src="Bluelogo.png" alt="maxchat Logo" class="logo" id="header-Logo">
+        <nav class="navigation"><a href="index.html"><i class="fa-solid fa-right-from-bracket">     </i></a><i id="hide-users" class="fa-solid fa-times"></i><i id="show-users" class="fa-solid fa-bars"></i></nav>
+    </header>
+
+    <main>
+    
+        <aside  id="aside">
+            <h1>Users</h1>
+            <ul id="user-list"></ul>
+        </aside>
+        <!-- chat area starts here -->
+        <section class="chat-area">
+            <div class="chat-box" id="chat-box"></div>
+            <!-- Message inputs go here -->
+            <div class="message-input">
+                <div id="typing-indicator">..</div>
+                <input type="text" id="message" placeholder="Type your reply">
+                <div class="voice-notes" id="voice-notes">
+                    <audio src="" id="audio-preview" controls></audio>
+                    <button id="start-recording">🎤</button>
+                    <button id="stop-recording">⏹️</button>
+                </div>
+                <button id="send-message">Send</button>
+            </div>
+            <div class="private-message-input">
+                <div class="private-message-inputs">
+                    <input type="text" id="private-id" placeholder="Private ID 🔏">
+                    <input type="text" id="private-message" placeholder="Private Message 💕">
+                </div>
+                <button id="send-private-message">Send</button>
+            </div>
+        </section>
+    
+    </main>
+
+
+    <footer>&copy;Muhammad Essa Magsi 2024</footer>
+
+    <div class="set-username-section" id="set-user-section">
+
+        <img src="Bluelogo.png" alt="BLue Logo" class="logo">
+        <div class="nickname-container">
+            <input type="text" id="nickname-input" placeholder="Enter your nickname">
+            <input type="number" id="age-input" placeholder="18" value="18" min="18" max="100">
+            <div class="gender-container">
+                <span class="maleBG">
+                    <input type="radio" name="gender" id="gender-male" checked="checked">
+                    <label for="gender-male">Male</label>
+                </span>
+                <span class="femaleBG">
+                    <input type="radio" name="gender" id="gender-female">
+                    <label for="gender-female">Female</label>    
+                </span>
+            </div>
+            <button id="join-button">Join</button>
+        </div>        
+
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

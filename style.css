@@ -1,0 +1,339 @@
+:root {
+    --mainColor: greenyellow;
+    --maleColor: cornflowerblue;
+    --femaleColor: palevioletred;
+    --blackColor:  #121212;
+    --whiteColor: snow;
+
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+    background-color: var(--whiteColor);
+    height: 100vh;
+}
+
+.header {
+    align-items: center;
+    background-color: var(--mainColor);
+    display: flex;
+    height: 70px;
+    justify-content: space-between;
+    padding: 0px 20px;
+    box-shadow: 0px 0px 5px var(--blackColor);
+}
+.logo {
+    width: 200px;
+}
+.navigation {
+    display: flex;
+    align-items: center;
+}
+.navigation a, .navigation i{
+    color: var(--whiteColor);
+    font-size: 1rem;
+    padding: 5px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+#hide-users, #show-users {
+    display: none;
+}
+
+main {
+    display: flex;
+    height: calc(100% - 120px);
+}
+
+aside {
+    /* background-color: var(--whiteColor); */
+    border-right: 5px solid var(--mainColor);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 200px;
+    z-index: 7;
+}
+
+aside h1 {
+    background-color: var(--mainColor);
+    color: var(--blackColor);
+    width: 100%;
+    text-align: center;
+}
+
+aside #user-list {
+    background-color: var(--whiteColor);
+    list-style-type: none;
+    padding: 0;
+    overflow-y: scroll;
+    height: 100%;
+    width: 100%;
+}
+
+aside #user-list .user {
+    border: 1px solid var(--mainColor);
+    color: var(--whiteColor);
+    padding: 10px 5px;
+    background-color: var(--blackColor);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.maleBG {
+    /* background-color: blueviolet; */
+    background-color:var(--maleColor) !important;
+}
+.femaleBG {
+    background-color: var(--femaleColor) !important;
+}
+.privateBG {
+    background-color: var(--blackColor) !important;
+}
+
+
+
+.chat-area {
+    flex: 1;
+    height: 100%;
+}
+
+.chat-box {
+    margin: 10px;
+    padding: 10px;
+    height: calc(100% - 100px);
+    overflow-y: scroll;
+}
+
+.chat-box .chat-bubble {
+    border-radius: 10px;
+    color: var(--whiteColor);
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 80%;
+    display: flex;
+    align-items: center;
+}
+
+.message-input {
+    display: flex;
+    height: 40px;
+    position: relative;
+}
+
+#typing-indicator {
+    background-color: yellowgreen; 
+    top: -30px;
+    color: var(--whiteColor); 
+    display: none; 
+    height: 30px;
+    left: 0; 
+    padding: 5px; 
+    position: absolute; 
+}
+.voice-notes {
+    border: 2px solid var(--mainColor);
+    display: flex;
+    flex: 0.3;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100px;
+    height: 40px;
+    overflow: hidden;
+}
+#start-recording,#stop-recording {
+    flex: 0.1;
+    height: 100%;
+}
+#audio-preview {
+    height: 40px;
+    width: 100%;
+}
+#message{
+    border: 2px solid var(--mainColor);
+    border-left: 0;
+    outline: none;
+    padding: 5px;
+    flex: 0.7;
+}
+
+#send-message {
+    background-color: var(--mainColor);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    width: 70px;
+    padding: 5px;
+}
+#send-message:hover { background-color: rgb(146, 218, 39); }
+#send-message:active { scale: 0.99; }
+
+.voice-note {
+    height: 30px;
+    width: 98%;
+    max-width: 300px;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+
+/* Private Message area */
+
+.private-message-input {
+    display: flex;
+    width: 100%;
+}
+.private-message-inputs {
+    display: flex;
+    flex: 1;
+}
+#private-id {
+    border: 2px solid var(--blackColor);
+    border-right: none;
+    outline: none;
+    padding: 5px;
+    flex: 0.3;
+    height: 40px;
+}
+
+#private-message {
+    border: 2px solid var(--blackColor);
+    outline: none;
+    padding: 5px;
+    flex: 0.7;
+    height: 40px;
+}
+
+#send-private-message {
+    background-color: var(--blackColor);
+    border: none;
+    color: var(--whiteColor);
+    outline: none;
+    cursor: pointer;
+    width: 70px;
+    padding: 5px;
+    height: 40px;
+}
+#send-private-message:hover { background-color: #151515 ; }
+#send-private-message:active { scale: 0.99; }
+
+footer {
+    align-items: center;
+    background-color: var(--mainColor);
+    display: flex;
+    height: 50px;
+    justify-content: center;
+}
+
+
+/* Set username Section */
+
+.set-username-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--whiteColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+    z-index: 9;
+    /* display: none; */
+}
+
+.nickname-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#nickname-input, #age-input{
+    border: 2px solid var(--mainColor);
+    outline: none;
+    padding: 5px;
+    width: 100%;
+    padding: 10px 20px;
+}
+.gender-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.gender-container span{
+    width: 50%;
+    padding: 5px 10px;
+    color: var(--whiteColor);
+}
+.gender-container span label{
+    cursor: pointer;
+}
+#join-button {
+    background-color: var(--mainColor);
+    border: none;
+    color: var(--whiteColor);
+    outline: none;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+}
+#join-button:hover { background-color: rgb(146, 218, 39); }
+#join-button:active { scale: 0.99; }
+
+
+@media only screen and (max-width: 6000px) {
+    #show-users, #hide-users {
+        display: none;
+    }
+}
+@media only screen and (max-width: 600px) {
+    #show-users {
+        display: inline;
+    }
+    main {
+        height: calc(100% - 120px);
+        overflow: hidden;
+    }
+    aside {
+        position: absolute;
+        top: 69px;
+        left: -200px;
+        height: calc(100% - 118px);
+        transition: 0.3s ease-in-out all;
+    }
+     .chat-box {
+        height: calc(100% - 120px);
+     }
+    .message-input {
+        width: 100%;
+    }
+    .private-message-input {
+        width: 100%;
+        flex-direction: column;
+    }
+    .private-message-inputs {
+        display: flex;
+        flex-direction: row;
+    }
+    #private-id {
+        width: 50%;
+        height: 30px;
+    }
+    #private-message{
+        width: 50%;
+        height: 30px;
+    }
+    #send-private-message {
+        width: 100%;
+        height: 30px;
+    }
+} 
